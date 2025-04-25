@@ -1,6 +1,6 @@
 /**
  * @file CalcTree7.cpp
- * @brief Реализация функций для решения задачи CalcTree7 (функциональный стиль)
+ * @brief Реализация функций для решения задачи CalcTree7
  */
 
 #include "CalcTree7.h"
