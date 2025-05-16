@@ -44,7 +44,7 @@ int main() {
     std::string input;
     std::getline(std::cin, input);
     
-    std::string morse = convertToMorse(input);
+    std::string morse = ConvertToMorse(input);
     std::cout << "код Морзе: " << morse << std::endl;
     
     return 0;
