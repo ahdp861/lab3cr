@@ -5,7 +5,7 @@
 
 #include "MorseMap.h"
 
-std::unordered_map<char, std::string> createMorseMap() {
+std::unordered_map<char, std::string> CreateMorseMap() {
     return {
         {'А', ".-"}, {'Б', "-..."}, {'В', ".--"}, {'Г', "--."},
         {'Д', "-.."}, {'Е', "."}, {'Ж', "...-"}, {'З', "--.."},
