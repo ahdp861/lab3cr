@@ -11,7 +11,7 @@
 
 using namespace std;
 
-vector<vector<int>> readGraph(const string& filename, int& n) {
+vector<vector<int>> ReadGraph(const string& filename, int& n) {
     ifstream file(filename);
     if (!file) {
         cerr << "Не удалось открыть файл: " << filename << endl;
@@ -30,7 +30,7 @@ vector<vector<int>> readGraph(const string& filename, int& n) {
     return graph;
 }
 
-set<int> findReachableCities(const vector<vector<int>>& graph, int start, int L) {
+set<int> FindReachableCities(const vector<vector<int>>& graph, int start, int L) {
     int n = static_cast<int>(graph.size());
     set<int> reachable;
     queue<pair<int, int>> q; // {город, уровень}
@@ -55,7 +55,7 @@ set<int> findReachableCities(const vector<vector<int>>& graph, int start, int L)
     return reachable;
 }
 
-vector<int> findCommonCities(const set<int>& set1, const set<int>& set2) {
+vector<int> FindCommonCities(const set<int>& set1, const set<int>& set2) {
     vector<int> result;
     set_intersection(set1.begin(), set1.end(),
                      set2.begin(), set2.end(),
