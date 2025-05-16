@@ -16,7 +16,7 @@
 std::string ConvertToMorse(const std::string& text) {
     static const auto morseMap = CreateMorseMap();
     
-    auto charToMorse = [](char c) {
+    auto CharToMorse = [](char c) {
         c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
         auto it = morseMap.find(c);
         return (it != morseMap.end()) ? it->second : "";
