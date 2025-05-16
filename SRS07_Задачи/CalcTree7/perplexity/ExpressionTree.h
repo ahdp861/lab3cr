@@ -38,7 +38,7 @@ public:
      * @brief Проверяет, является ли узел операцией
      * @return true если узел представляет операцию, иначе false
      */
-    bool isOperation() const;
+    bool IsOperation() const;
 };
 
 /**
@@ -53,57 +53,57 @@ private:
      * @param val Значение узла
      * @return Указатель на созданный узел
      */
-    std::shared_ptr<TreeNode> createNode(int val) const;
+    std::shared_ptr<TreeNode> CreateNode(int val) const;
 
     /**
      * @brief Вычисляет значение поддерева
      * @param node Корень поддерева
      * @return Значение поддерева
      */
-    int evaluateSubtree(std::shared_ptr<TreeNode> node) const;
+    int EvaluateSubtree(std::shared_ptr<TreeNode> node) const;
 
     /**
      * @brief Рекурсивная функция преобразования дерева
      * @param node Текущий узел
      */
-    void transformTree(std::shared_ptr<TreeNode> node);
+    void TransformTree(std::shared_ptr<TreeNode> node);
 
     /**
      * @brief Рекурсивная функция вывода дерева
      * @param node Текущий узел
      */
-    void printPrefix(std::shared_ptr<TreeNode> node) const;
+    void PrintPrefix(std::shared_ptr<TreeNode> node) const;
 
 public:
     /**
      * @brief Конструктор ExpressionTree
-     * @param filename Имя файла с выражением
+     * @param file_name Имя файла с выражением
      */
-    explicit ExpressionTree(const std::string& filename);
+    explicit ExpressionTree(const std::string& file_name);
 
     /**
      * @brief Читает выражение из файла
-     * @param filename Имя файла
+     * @param file_name Имя файла
      * @return Вектор токенов выражения
      */
-    std::vector<int> readExpression(const std::string& filename) const;
+    std::vector<int> ReadExpression(const std::string& file_name) const;
 
     /**
      * @brief Строит дерево выражения из префиксной формы
      * @param tokens Вектор токенов
      * @return Указатель на корень дерева
      */
-    std::shared_ptr<TreeNode> buildTree(const std::vector<int>& tokens);
+    std::shared_ptr<TreeNode> BuildTree(const std::vector<int>& tokens);
 
     /**
      * @brief Преобразует дерево, заменяя поддеревья с результатами 0-9 на листья
      */
-    void transformTree();
+    void TransformTree();
 
     /**
      * @brief Выводит дерево в префиксной форме
      */
-    void printPrefix() const;
+    void PrintPrefix() const;
 };
 
 #endif // EXPRESSIONTREE_H
