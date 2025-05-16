@@ -13,28 +13,28 @@ int main(int argc, char* argv[]) {
     }
     
     int n;
-    auto graph = readGraph(argv[1], n);
+    auto graph = ReadGraph(argv[1], n);
     
-    int K1, K2, L;
+    int k1, k2, l;
     std::cout << "Введите номера городов K1 и K2 (1-based) и максимальное число пересадок L: ";
-    std::cin >> K1 >> K2 >> L;
+    std::cin >> k1 >> k2 >> l;
     
     // Преобразуем в 0-based индексы
-    K1--;
-    K2--;
+    k1--;
+    k2--;
     
-    auto reachableFromK1 = findReachableCities(graph, K1, L);
-    auto reachableFromK2 = findReachableCities(graph, K2, L);
+    auto reachable_from_k1 = FindReachableCities(graph, k1, l);
+    auto reachable_from_k2 = FindReachableCities(graph, k2, l);
     
-    auto commonCities = findCommonCities(reachableFromK1, reachableFromK2);
+    auto common_cities = FindCommonCities(reachable_from_k1, reachable_from_k2);
     
     // Преобразуем обратно в 1-based индексы
-    for (auto& city : commonCities) city++;
+    for (auto& city : common_cities) city++;
     
-    if (commonCities.empty()) {
+    if (common_cities.empty()) {
         std::cout << -1 << std::endl;
     } else {
-        for (int city : commonCities) {
+        for (int city : common_cities) {
             std::cout << city << " ";
         }
         std::cout << std::endl;
