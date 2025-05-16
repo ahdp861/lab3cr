@@ -11,10 +11,10 @@
 
 using namespace std;
 
-vector<vector<int>> ReadGraph(const string& filename, int& n) {
-    ifstream file(filename);
+vector<vector<int>> ReadGraph(const string& file_name, int& n) {
+    ifstream file(file_name);
     if (!file) {
-        cerr << "Не удалось открыть файл: " << filename << endl;
+        cerr << "Не удалось открыть файл: " << file_name << endl;
         exit(1);
     }
     
@@ -30,35 +30,35 @@ vector<vector<int>> ReadGraph(const string& filename, int& n) {
     return graph;
 }
 
-set<int> FindReachableCities(const vector<vector<int>>& graph, int start, int L) {
+set<int> FindReachableCities(const vector<vector<int>>& graph, int start_city, int max_level) {
     int n = static_cast<int>(graph.size());
-    set<int> reachable;
+    set<int> reachable_cities;
     queue<pair<int, int>> q; // {город, уровень}
     
-    q.push({start, 0});
-    reachable.insert(start);
+    q.push({start_city, 0});
+    reachable_cities.insert(start_city);
     
     while (!q.empty()) {
         auto [city, level] = q.front();
         q.pop();
         
-        if (level >= L) continue;
+        if (level >= max_level) continue;
         
         for (int neighbor = 0; neighbor < n; ++neighbor) {
-            if (graph[city][neighbor] && !reachable.count(neighbor)) {
-                reachable.insert(neighbor);
+            if (graph[city][neighbor] && !reachable_cities.count(neighbor)) {
+                reachable_cities.insert(neighbor);
                 q.push({neighbor, level + 1});
             }
         }
     }
     
-    return reachable;
+    return reachable_cities;
 }
 
-vector<int> FindCommonCities(const set<int>& set1, const set<int>& set2) {
+vector<int> FindCommonCities(const set<int>& set_1, const set<int>& set_2) {
     vector<int> result;
-    set_intersection(set1.begin(), set1.end(),
-                     set2.begin(), set2.end(),
+    set_intersection(set_1.begin(), set_1.end(),
+                     set_2.begin(), set_2.end(),
                      back_inserter(result));
     return result;
 }
