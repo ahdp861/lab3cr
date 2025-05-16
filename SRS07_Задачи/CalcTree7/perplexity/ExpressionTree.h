@@ -1,6 +1,6 @@
 /**
  * @file ExpressionTree.h
- * @brief Объявление классов для решения задачи CalcTree7 (ООП стиль)
+ * @brief Объявление классов для решения задачи CalcTree7
  */
 
 #ifndef EXPRESSIONTREE_H
