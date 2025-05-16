@@ -12,27 +12,27 @@
 
 /**
  * @brief Читает матрицу смежности из файла
- * @param filename Имя файла
- * @param n Количество городов (выходной параметр)
+ * @param file_name Имя файла
+ * @param city_count Количество городов (выходной параметр)
  * @return Матрица смежности
  */
-std::vector<std::vector<int>> readGraph(const std::string& filename, int& n);
+std::vector<std::vector<int>> ReadGraph(const std::string& file_name, int& city_count);
 
 /**
  * @brief Находит города, достижимые из заданного с не более чем L пересадками
  * @param graph Матрица смежности
- * @param start Начальный город (0-based индекс)
- * @param L Максимальное количество пересадок
+ * @param start_city Начальный город (0-based индекс)
+ * @param max_transfers Максимальное количество пересадок
  * @return Множество достижимых городов (0-based индексы)
  */
-std::set<int> findReachableCities(const std::vector<std::vector<int>>& graph, int start, int L);
+std::set<int> FindReachableCities(const std::vector<std::vector<int>>& graph, int start_city, int max_transfers);
 
 /**
  * @brief Находит пересечение двух множеств городов
- * @param set1 Первое множество городов
- * @param set2 Второе множество городов
+ * @param first_set Первое множество городов
+ * @param second_set Второе множество городов
  * @return Вектор общих городов, отсортированный по возрастанию
  */
-std::vector<int> findCommonCities(const std::set<int>& set1, const std::set<int>& set2);
+std::vector<int> FindCommonCities(const std::set<int>& first_set, const std::set<int>& second_set);
 
-#endif // GRAPHUTILS_H
+#endif  // GRAPHUTILS_H
