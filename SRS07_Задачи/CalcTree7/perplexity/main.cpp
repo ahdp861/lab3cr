@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @brief Точка входа в программу решения задачи CalcTree7 (ООП стиль)
+ * @brief Точка входа в программу решения задачи CalcTree7
  */
 
 #include <iostream>
@@ -15,12 +15,12 @@ int main(int argc, char* argv[]) {
     ExpressionTree tree(argv[1]);
 
     std::cout << "Исходное дерево (префиксная форма): ";
-    tree.printPrefix();
+    tree.PrintPrefix();
 
-    tree.transformTree();
+    tree.TransformTree();
 
     std::cout << "Преобразованное дерево (префиксная форма): ";
-    tree.printPrefix();
+    tree.PrintPrefix();
 
     return 0;
 }
