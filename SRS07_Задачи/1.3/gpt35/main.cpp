@@ -13,8 +13,8 @@
  * @param text Входная строка
  * @return Строка с кодом Морзе
  */
-std::string convertToMorse(const std::string& text) {
-    static const auto morseMap = createMorseMap();
+std::string ConvertToMorse(const std::string& text) {
+    static const auto morseMap = CreateMorseMap();
     
     auto charToMorse = [](char c) {
         c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
