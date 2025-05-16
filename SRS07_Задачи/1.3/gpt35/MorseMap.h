@@ -13,6 +13,6 @@
  * @brief Создает и возвращает таблицу кодов Морзе
  * @return unordered_map с соответствием символов и кодов Морзе
  */
-std::unordered_map<char, std::string> createMorseMap();
+std::unordered_map<char, std::string> CreateMorseMap();
 
 #endif // MORSEMAP_H
