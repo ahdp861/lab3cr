@@ -1,6 +1,6 @@
 /**
  * @file ExpressionTree.cpp
- * @brief Реализация классов для решения задачи CalcTree7 (ООП стиль)
+ * @brief Реализация классов для решения задачи CalcTree7
  */
 
 #include "ExpressionTree.h"
